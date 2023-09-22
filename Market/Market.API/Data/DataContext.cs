@@ -11,7 +11,7 @@ namespace Market.API.Data
         //utilizar las propiedades y opciones de DbContext (no entendi que hizo o para que es eso)
         public DataContext(DbContextOptions<DataContext> options) : base(options) { 
         
-
+            
 
         }
 
