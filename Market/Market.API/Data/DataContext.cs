@@ -23,6 +23,11 @@ namespace Market.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            //Instrucción para crear el indice al nombre de country, esto no permite agregar valores repetidos y ordena alfabeticamente.
+
+            modelBuilder.Entity<Country>().HasIndex(c=>c.Name).IsUnique();
+
         }
     }
 
