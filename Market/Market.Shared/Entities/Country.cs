@@ -17,7 +17,8 @@ namespace Market.Shared.Entities
         [Display (Name="Pais") ] //etiqueta que restringe el campo a que lo llenen como quieran ; como un titulo al campo
         [MaxLength (100,ErrorMessage = "El campo {0} debe contener únicamente 100 caracteres")] //etiqueta maximo caraceteres que podran digitar^; el {0} hace referencia al campo 0 que es Name, es como sumarle al mensaje la variable a la que hago referencia
         [Required(ErrorMessage = "El campo {0} es obligatorio")] //LONGITUD: etiqueta que hace el campo obligatorio
-        public string? Name { get; set; } // el ? hace un salto de nulos, los ignora
+        public string Name { get; set; } // el ? hace un salto de nulos, los ignora
 
+        public ICollection<State> States { get; set;} //Country tiene una coleccion de Estados, State, con el controlador States
     }
 }

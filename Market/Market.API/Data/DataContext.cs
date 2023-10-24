@@ -16,17 +16,18 @@ namespace Market.API.Data
         }
 
         //Tampoco entendi nada de lo que hizo aqui ni que es 
-        public DbSet<Country>Countries { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<State> States { get; set; }
 
 
         //Tampoco entendi nada de lo que hizo aqui ni que es 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder); //MOdelBuilder: permite mandar cosas para la base de datos, definicion predeterminada
 
             //Instrucción para crear el indice al nombre de country, esto no permite agregar valores repetidos y ordena alfabeticamente.
 
-            modelBuilder.Entity<Country>().HasIndex(c=>c.Name).IsUnique();
+            modelBuilder.Entity<Country>().HasIndex(c=>c.Name).IsUnique(); //Has: expresion de tener, Name: se le especifica que el index se tome por el nombre
 
         }
     }
